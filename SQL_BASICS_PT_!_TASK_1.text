@@ -1,0 +1,9 @@
+CREATE TABLE employees (id INTEGER PRIMARY KEY, name TEXT, department TEXT, salary REAL, position TEXT);
+INSERT INTO employees (name, department, salary, position) VALUES ('Karl Max', 'Management', 50000, 'HR'), ('Abigale Testarossa', 'Marketing', 30000, 'Sales Manager');
+UPDATE employees SET salary= 55000 WHERE name= 'Karl Max';
+SELECT * FROM employees;
+# 1|Karl Max|Management|55000.0|HR
+# 2|Abigale Testarossa|Marketing|30000.0|Sales Manager
+DELETE FROM employees WHERE name= 'Abigale Testarossa';
+SELECT * FROM employees;
+# 1|Karl Max|Management|55000.0|HR
