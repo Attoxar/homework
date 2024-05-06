@@ -1,16 +1,5 @@
--- Create the employees table and insert three sample records
-CREATE TABLE employees (employee_id INTEGER PRIMARY KEY, first_name TEXT, last_name TEXT, department_id INTEGER, salary REAL);
-
-INSERT INTO employees (first_name, last_name, department_id, salary) VALUES ('Karl', 'Max', 1, 50000);
-INSERT INTO employees (first_name, last_name, department_id, salary) VALUES ('Abigale', 'Testarossa', 2, 60000);
-INSERT INTO employees (first_name, last_name, department_id, salary) VALUES ('Mike', 'Tyson', 1, 55000);
-
 SELECT first_name AS "First Name", last_name AS "Last Name" FROM employees;
-
 SELECT DISTINCT department_id FROM employees;
-
 SELECT * FROM employees ORDER BY first_name DESC;
-
 SELECT first_name, last_name, salary, salary * 0.12 AS PF FROM employees;
-
 SELECT MAX(salary) AS max_salary, MIN(salary) AS min_salary FROM employees;
