@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .enter-button {
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            outline: none;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+        .enter-button:hover {
+            background-color: #3e8e41;
+        }
+        .enter-button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Welcome to My Website</h1>
+        <button class="enter-button" onclick="playSoundAndRedirect()">Enter</button>
+        <audio id="enter-sound" src="{% static 'homepage/enter-sound.mp3' %}"></audio>
+    </div>
+    <script>
+        function playSoundAndRedirect() {
+            var audio = document.getElementById('enter-sound');
+            audio.play();
+            audio.onended = function() {
+                window.location.href = "{% url 'index' %}";
+            };
+        }
+    </script>
+</body>
+</html>
